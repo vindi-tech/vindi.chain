@@ -9,7 +9,7 @@ var fs = require('fs')
 var txOuts = [{id:'0x000001100',from:'gen', address:'jordan', value:100000}] // all tax outs
 
 class txOut {
-  constructor(spend, from, address, value, currency, deliveryAddress, Warehouse, driver, driverLocation, orderDetails) {
+  constructor(spend, from, address, value, currency, deliveryAddress, Warehouse, driver, driverLocation, orderDetails, timestamp) {
 
       this.spend = spend
       this.currency = currency
@@ -22,9 +22,29 @@ class txOut {
       this.driver = driver
       this.driverLocation = driverLocation
       this.orderDetails = orderDetails
+      this.timestamp = timestamp
 
 
   }
 }
 
-console.log(new txOut(txOuts[0],'j', '00', 20, 'vnc', '950 Deleware Ave. Dayton, TN, 37321', 'Dollar General', 'jordan', '305 Some Ave. Dayton, TN', 'laundry detergent, tide, liquid, 52oz, botanical forest' ));
+class txIn {
+    constructor(spend, address, value, currency,  deliveryAddress, Warehouse, driver, driverLocation, orderDetails, timestamp) {
+        this.spend = spend,
+        this.fromId= spend.id,
+        this.from= spend.address,
+        this.address= address,
+        this.value = value,
+        // this.id= makeTxId(address, [`value`], `from`)
+        this.deliveryAddress = deliveryAddress
+        this.Warehouse = Warehouse
+        this.driver = driver
+        this.driverLocation = driverLocation
+        this.orderDetails = orderDetails,
+        this.timestamp = timestamp
+
+    }
+  }
+
+console.log(new txOut(txOuts[0],'jordan', '00', 20, 'vnc', '950 Deleware Ave. Dayton, TN, 37321', 'Dollar General', 'jordan', '305 Some Ave. Dayton, TN', 'laundry detergent, tide, liquid, 52oz, botanical forest', moment().format('X') ));
+console.log(new txIn(txOuts[0], 'j', 20, 'vnc', '950 Deleware Ave. Dayton, TN, 37321', 'Dollar General', 'jordan', '305 Some Ave. Dayton, TN', 'laundry detergent, tide, liquid, 52oz, botanical forest', moment().format('X')  ));
