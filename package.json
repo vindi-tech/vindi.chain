@@ -1,0 +1,24 @@
+{
+  "name": "vindi.chain",
+  "version": "1.0.0",
+  "description": "A blockchain package based off of serve.chain except tailred for our delivery process and for supply-chain transactions",
+  "main": "app.js",
+  "scripts": {
+    "test": "vchain"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vindi-tech/vindi.chain.git"
+  },
+  "author": "kaleb wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vindi-tech/vindi.chain/issues"
+  },
+  "homepage": "https://github.com/vindi-tech/vindi.chain#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "math": "0.0.3",
+    "moment": "^2.22.1"
+  }
+}
