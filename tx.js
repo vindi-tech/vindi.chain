@@ -46,5 +46,11 @@ class txIn {
     }
   }
 
-console.log(new txOut(txOuts[0],'jordan', '00', 20, 'vnc', '950 Deleware Ave. Dayton, TN, 37321', 'Dollar General', 'jordan', '305 Some Ave. Dayton, TN', 'laundry detergent, tide, liquid, 52oz, botanical forest', moment().format('X') ));
-console.log(new txIn(txOuts[0], 'j', 20, 'vnc', '950 Deleware Ave. Dayton, TN, 37321', 'Dollar General', 'jordan', '305 Some Ave. Dayton, TN', 'laundry detergent, tide, liquid, 52oz, botanical forest', moment().format('X')  ));
+
+var createTransaction = (spend, from, address, value, currency, deliveryAddress, Warehouse, driver, driverLocation, orderDetails, timestamp) => {
+
+  var TXOUT = new txOut(spend, from, address, value, currency, deliveryAddress, Warehouse, driver, driverLocation, orderDetails, timestamp)
+  var TXIN = new txIn(spend, address, value, currency,  deliveryAddress, Warehouse, driver, driverLocation, orderDetails, timestamp)
+  return [TXOUT, TXIN]
+}
+console.log(createTransaction(txOuts[0], 'jordan', 'driver', 20, 'vnc', '950 delware ave dayton, tn', 'Dollar General', 'smedriver', 'somehwere ave. dayton tn', 'tide,liquid ,32oz.', moment().format('X')));
