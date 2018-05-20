@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/vindi-tech/vindi.chain#readme",
   "dependencies": {
+    "brain.js": "^1.2.1",
     "express": "^4.16.3",
     "math": "0.0.3",
-    "moment": "^2.22.1"
+    "moment": "^2.22.1",
+    "underscore": "^1.9.0"
   }
 }
