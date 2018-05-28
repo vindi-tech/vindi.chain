@@ -8,7 +8,6 @@ var fs = require('fs')
 var Binary = require('tobinary')
 var crypto = require('crypto')
 var brain = require('brain.js')
-var machineId = require('machine-id');
 
 var txChain = [
   {

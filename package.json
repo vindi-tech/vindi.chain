@@ -22,6 +22,7 @@
     "machine-id": "^1.0.0",
     "math": "0.0.3",
     "moment": "^2.22.1",
+    "node-machine-id": "^1.1.10",
     "to-binary": "0.0.1",
     "tobinary": "^0.1.2",
     "underscore": "^1.9.0"
