@@ -8,6 +8,7 @@ var fs = require('fs')
 var Binary = require('tobinary')
 var crypto = require('crypto')
 var brain = require('brain.js')
+var machineId = require('machine-id');
 
 var txChain = [
   {
@@ -65,16 +66,19 @@ var makePublicAddress = (privateKey, publicKey) => {
   return hash
 }
 
+
 var makeWallet = (yourAccount) => {
   var privateKey = makePrivateKey(yourAccount)
   var publicKey = makePublicKey(privateKey)
   var publicAddress = makePublicAddress(privateKey, publicKey)
-  fs.writeFile(`${publicAddress}`, 'Hello', (err) => {
+  fs.writeFile(`C:/Users/jmhayes95/Documents/vindi.chain/wallets/ `+`${publicAddress}`, 'Hello', (err) => {
   if (err) throw err;
   console.log('The file has been saved!');
 });
   return publicAddress
 }
+
+
 var calculateHashForTX = (signature, address, amount) => {
   const secret = signature.toString();
   const hash = crypto.createHmac('sha256', secret)

@@ -19,6 +19,7 @@
   "dependencies": {
     "brain.js": "^1.2.1",
     "express": "^4.16.3",
+    "machine-id": "^1.0.0",
     "math": "0.0.3",
     "moment": "^2.22.1",
     "to-binary": "0.0.1",
