@@ -37,7 +37,7 @@ module.exports = class Block {
       this.prevNoonce =prevNoonce
       this.noonce = prevNoonce + prevPreviousNoonce
       this.customer = customer
-      this.arrival = emitter.emit('arrival', driver)
+      // this.arrival = emitter.emit('arrival', driver)
   }
 }
 
