@@ -39,6 +39,10 @@ class Account{
   }
 }
 
+/*
+makePrivateKey {function} - meant to create a private key based off of account info using SHA256
+@param - yourAccount {object} - your account created from the {class} Account
+*/
 var makePrivateKey = (yourAccount) => {
   const secret = yourAccount.paypal.password.toString();
   const hash = crypto.createHmac('sha256', secret)
@@ -47,7 +51,10 @@ var makePrivateKey = (yourAccount) => {
   return hash
 }
 
-
+/*
+makePubicKey {function} - meant to create a public key based off of private key and account info info using SHA256 and is used to sign transactions
+@param - privateKey {string} - your private key generated from the {function} makePrivateKey
+*/
 var makePublicKey = (privateKey) => {
   const secret = privateKey.toString();
   const hash = crypto.createHmac('sha256', secret)
@@ -127,7 +134,7 @@ console.log('\ntestUSTXO\n', testUSTXO);
 
 
 
-
+/* SEPERATE BELOW INTO OTHER FILE FOR AI*/
 
 var binaryToDecimal = (binary) => {
   var string = binary
